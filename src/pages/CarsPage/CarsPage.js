@@ -1,10 +1,11 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 function CarsPage(props) {
     return (
-        <div className="p-cars">
+        <Container className="p-cars">
             <h1>Cars Page</h1>
-        </div>
+        </Container>
     );
 }
 
