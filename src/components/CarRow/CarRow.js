@@ -1,8 +1,9 @@
 import React from 'react';
 
-function CarRow({car}) {
+function CarRow({car, isHighest}) {
     return (
-        <tr onDoubleClick={() => console.log(car)}>
+        <tr onDoubleClick={() => console.log(car)}
+            className={isHighest ? "bg-danger" : ""}>
             <td>{car.brand}</td>
             <td>{car.model}</td>
             <td>{car.year}</td>
