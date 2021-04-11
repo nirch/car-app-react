@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Table } from 'react-bootstrap';
+import { Button, Container, Table } from 'react-bootstrap';
 import CarRow from '../../components/CarRow/CarRow';
 import CarModel from '../../model/CarModel';
 
@@ -18,9 +18,12 @@ function CarsPage(props) {
         }
     }
 
+    function addCar() {
+        setCars(cars.concat(new CarModel("Subaru", "B4", 2018, 100000)));
+    }
 
 
-    const carRows = cars.map(car => <CarRow car={car} isHighest={car === highestKmPerYear}/>)
+    const carRows = cars.map(car => <CarRow car={car} isHighest={car.kmPerYear() === highestKmPerYear.kmPerYear()}/>)
 
     return (
         <Container className="p-cars">
@@ -38,6 +41,7 @@ function CarsPage(props) {
                     {carRows}
                 </tbody>
             </Table>
+            <Button onClick={addCar}>Add Car</Button>
         </Container>
     );
 }
