@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Table } from 'react-bootstrap';
+import CarRow from '../../components/CarRow/CarRow';
 import CarModel from '../../model/CarModel';
 
 function CarsPage(props) {
@@ -10,21 +11,22 @@ function CarsPage(props) {
     ]);
 
 
-
+    const carRows = cars.map(car => <CarRow car={car}/>)
 
     return (
         <Container className="p-cars">
-            <Table>
+            <Table hover>
                 <thead>
                     <tr>
-                        <td>Brand</td>
-                        <td>Model</td>
-                        <td>Year</td>
-                        <td>KM</td>
-                        <td>KM Per Year</td>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                        <th>KM</th>
+                        <th>KM Per Year</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {carRows}
                 </tbody>
             </Table>
         </Container>
