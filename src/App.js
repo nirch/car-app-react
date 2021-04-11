@@ -1,10 +1,9 @@
-import './App.css';
-import MyComp from './components/MyComp/MyComp';
+import CarsPage from './pages/CarsPage/CarsPage';
 
 function App() {
   return (
     <div>
-      <MyComp/>
+      <CarsPage/>
     </div>
   );
 }
