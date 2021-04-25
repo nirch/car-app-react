@@ -15,7 +15,7 @@ function CarsPage({cars, onAddCar}) {
                 highestKmPerYear = car;
             }
         }
-        carRows = cars.map((car, index) => <CarRow key={index} car={car} isHighest={car.kmPerYear() === highestKmPerYear.kmPerYear()}/>)
+        carRows = cars.map((car, index) => <CarRow key={index} car={car} index={index} isHighest={car.kmPerYear() === highestKmPerYear.kmPerYear()}/>)
     }
 
 
