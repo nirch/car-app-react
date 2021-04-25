@@ -1,20 +1,9 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button, Container, Spinner, Table } from 'react-bootstrap';
 import CarRow from '../../components/CarRow/CarRow';
 import CarModel from '../../model/CarModel';
 
-function CarsPage(props) {
-    const [cars, setCars] = useState(null);
-
-    // We want to fetch the cars data from JSON only once the compoenent is mounting
-    useEffect(() => {
-        axios.get("cars.json").then(response => {
-            setCars(response.data.map(plainCar => new CarModel(plainCar.brand, plainCar.model, plainCar.year, plainCar.km)));
-        }).catch(error => {
-            console.error(error);
-        });
-    }, []);
+function CarsPage({cars, onAddCar}) {
 
     // finding the car with the highest km per year
     let highestKmPerYear;
@@ -31,7 +20,7 @@ function CarsPage(props) {
 
 
     function addCar() {
-        setCars(cars.concat(new CarModel("Subaru", "B4", 2018, 100000)));
+        onAddCar(new CarModel("Subaru", "B4", 2018, 100000));
     }
 
 
