@@ -13,7 +13,7 @@ function App() {
           <Switch>
             <Route exact path="/"><HomePage/></Route>
             <Route exact path="/cars"><CarsPage/></Route>
-            <Route exact path="/cars/:id"><CarDetailsPage/></Route>
+            <Route exact path="/cars/:index"><CarDetailsPage/></Route>
             <Route path="/"><NotFoundPage/></Route>
           </Switch>
       </HashRouter>

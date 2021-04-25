@@ -2,12 +2,12 @@ import React from 'react';
 import { useParams } from 'react-router';
 
 function CarDetailsPage(props) {
-    const {id} = useParams();
+    const {index} = useParams();
 
     return (
         <div>
             CarDetailsPage
-            <p>{id}</p>
+            <p>{index}</p>
         </div>
     );
 }
