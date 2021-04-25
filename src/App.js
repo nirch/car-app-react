@@ -7,6 +7,7 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 function App() {
   return (
     <div>
+      {/* <header>Header</header> */}
       <HashRouter>
           <Switch>
             <Route exact path="/"><HomePage/></Route>
@@ -14,6 +15,7 @@ function App() {
             <Route path="/"><NotFoundPage/></Route>
           </Switch>
       </HashRouter>
+      {/* <footer>Footer</footer> */}
     </div>
   );
 }
