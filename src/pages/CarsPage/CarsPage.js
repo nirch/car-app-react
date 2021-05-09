@@ -1,4 +1,4 @@
-import { GoogleApiWrapper, Map } from 'google-maps-react';
+import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 import React from 'react';
 import { Button, Container, Spinner, Table } from 'react-bootstrap';
 import CarRow from '../../components/CarRow/CarRow';
@@ -55,6 +55,8 @@ function CarsPage({cars, onAddCar, google}) {
                 zoom={7}
                 style={{width: "600px", height: "450px"}}
             >
+                <Marker position={{lat: 32.0879994, lng: 34.7622265}}/>
+                <Marker position={{lat: 31.7964453, lng: 35.105319}}/>
             </Map>
         </Container>
     );
