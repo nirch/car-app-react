@@ -1,9 +1,10 @@
+import { GoogleApiWrapper, Map } from 'google-maps-react';
 import React from 'react';
 import { Button, Container, Spinner, Table } from 'react-bootstrap';
 import CarRow from '../../components/CarRow/CarRow';
 import CarModel from '../../model/CarModel';
 
-function CarsPage({cars, onAddCar}) {
+function CarsPage({cars, onAddCar, google}) {
 
     // finding the car with the highest km per year
     let highestKmPerYear;
@@ -45,8 +46,21 @@ function CarsPage({cars, onAddCar}) {
                 <Spinner animation="border"/>
             }
             <Button onClick={addCar}>Add Car</Button>
+            <Map
+                google={google}
+                initialCenter={{
+                    lat: 31.403719,
+                    lng: 33.960651
+                  }}
+                zoom={7}
+                style={{width: "600px", height: "450px"}}
+            >
+            </Map>
         </Container>
     );
 }
 
-export default CarsPage;
+export default GoogleApiWrapper({
+    apiKey: ("AIzaSyAi5g_KBXE7z_IVdXbbr3oJV3E8YUn7Fec")
+  })(CarsPage)
+  
