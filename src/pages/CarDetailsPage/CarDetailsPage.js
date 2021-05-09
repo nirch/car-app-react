@@ -25,6 +25,16 @@ function CarDetailsPage({cars}) {
                         <p>Year: {cars[index].year}</p>
                         <p>KM: {cars[index].km}</p>
                         <p>Km Per Year: {cars[index].kmPerYear()}</p>
+
+                        <iframe
+                            width="600"
+                            height="450"
+                            style={{border:0}}
+                            loading="lazy"
+                            allowfullscreen
+                            src={"https://www.google.com/maps/embed/v1/place?key=AIzaSyAi5g_KBXE7z_IVdXbbr3oJV3E8YUn7Fec&q=" + cars[index].address}>
+                        </iframe>
+
                     </> : <Spinner/>
                 }
             </Container>

@@ -3,18 +3,21 @@
         "brand": "Toyota",
         "model": "Yaris",
         "year": 2002,
-        "km": 240000
+        "km": 240000,
+        "address": "Hertzel 10, Tel Aviv"
     },
     {
         "brand": "Toyota",
         "model": "Corola",
         "year": 2015,
-        "km": 115000
+        "km": 115000,
+        "address": "Hertzel 10, Ramat Gan"
     },
     {
         "brand": "Hyundai",
         "model": "i30",
         "year": 2010,
-        "km": 180000
+        "km": 180000,
+        "address": "Hertzel 10, Netanya"
     }
 ]

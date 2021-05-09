@@ -20,7 +20,7 @@ function CarsPage({cars, onAddCar}) {
 
 
     function addCar() {
-        onAddCar(new CarModel("Subaru", "B4", 2018, 100000));
+        onAddCar(new CarModel("Subaru", "B4", 2018, 100000, "Herzl 10, Haifa"));
     }
 
 

@@ -1,10 +1,11 @@
 
 class CarModel {
-    constructor(brand, model, year, km) {
+    constructor(brand, model, year, km, address) {
         this.brand = brand;
         this.model = model;
         this.year = year;
         this.km = km;
+        this.address = address;
     }
 
     kmPerYear() {
