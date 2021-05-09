@@ -13,14 +13,20 @@ function App() {
 
   // We want to fetch the cars data from JSON only once the compoenent is mounting
   useEffect(() => {
-      axios.get("cars.json").then(response => {
-          setCars(response.data.map(plainCar => new CarModel(plainCar.brand, plainCar.model, plainCar.year, plainCar.km, plainCar.address)));
+      axios.get("cars.json").then(async response => {
+          const myCars = response.data.map(plainCar => new CarModel(plainCar.brand, plainCar.model, plainCar.year, plainCar.km, plainCar.address));
+          for (const car of myCars) {
+            await car.calcPosition();
+          }          
+
+          setCars(myCars);
       }).catch(error => {
           console.error(error);
       });
   }, []);
 
-  function addCar(car) {
+  async function addCar(car) {
+    await car.calcPosition();
     setCars(cars.concat(car));
   }
 

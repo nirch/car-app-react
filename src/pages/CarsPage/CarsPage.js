@@ -8,15 +8,18 @@ function CarsPage({cars, onAddCar, google}) {
 
     // finding the car with the highest km per year
     let highestKmPerYear;
-    let carRows
+    let carRows;
+    let carMarkers;
     if (cars) {
         highestKmPerYear = cars[0];
         for (const car of cars) {
             if (car.kmPerYear() > highestKmPerYear.kmPerYear()) {
                 highestKmPerYear = car;
             }
+            console.log(car.position);
         }
         carRows = cars.map((car, index) => <CarRow key={index} car={car} index={index} isHighest={car.kmPerYear() === highestKmPerYear.kmPerYear()}/>)
+        carMarkers = cars.map(car => <Marker position={car.position}/>)
     }
 
 
@@ -55,8 +58,7 @@ function CarsPage({cars, onAddCar, google}) {
                 zoom={7}
                 style={{width: "600px", height: "450px"}}
             >
-                <Marker position={{lat: 32.0879994, lng: 34.7622265}}/>
-                <Marker position={{lat: 31.7964453, lng: 35.105319}}/>
+                {carMarkers}
             </Map>
         </Container>
     );
